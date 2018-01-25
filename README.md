@@ -13,7 +13,8 @@ Phantomimi uses the beta channel of Chrome modified to be stable.<br/>
 The code also required babel-polyfill for phantomimi's compatibility.
 
 ## Test
-Tests were done on Mac os, with Chrome Canary 56. Instructions to download Chrome Canary here : [Download Canary](https://www.google.fr/chrome/browser/canary.html)
+Tests were done on Mac os, with Chrome Canary 56. Instructions to download Chrome Canary here : [Download Canary](https://www.google.fr/chrome/browser/canary.html).<br/>
+Local computer configuration : Core i5 2.6 GHz, RAM 8 Go 1600 MHz, ping : 26ms, Download: 6.16 Mbps, Upload: 0.86 Mbps [see internet speed details here](http://www.speedtest.net/result/6997039789)
 
 ## Code Architecture
 The code is splitted into functions and needs variables to be set. 
@@ -42,6 +43,6 @@ Be fast as possible needs parallel scrapping. To set the number of chrome instan
 
 ## Important
 Please verify that the path of your local Chrome is the right path. Phantomimi needs CHROME_PATH to work. <br/>
-Launching various chrome instances could be difficult on your machine depending of it's configuration. Moreover there is a delay before the launch command and the chrome's startup.<br>
+Launching various chrome instances could be difficult on your machine depending of it's configuration. Moreover there is a delay before the launch command and the chrome's startup.<br/>
 This script can be faster on AWS lambda by launching more instances at the same time (Ex : 10 chrome instances) without any lag as working with local Chrome instance.
 

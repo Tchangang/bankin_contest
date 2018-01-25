@@ -254,7 +254,7 @@ const main = async ()=>{
             console.log('Computer : Core i5 2.6 GHz, RAM 8 Go 1600 MHz, ping : 26ms, Download: 6.16 Mbps, Upload: 0.86 Mbps (http://www.speedtest.net/result/6997039789)')
             console.log('Chrome instance launched | Execution time')
             console.log('          1              | 179 267 ms')
-            console.log('          2              | 83869 ms')
+            console.log('          2              | 83 869 ms')
             console.log('          3              | 109 694 ms')
             console.log('          4              | 76 779 ms')
             console.log('          5              | 62 089 ms')
