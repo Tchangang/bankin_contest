@@ -1,5 +1,5 @@
 let transactions = [] // final transactions array
-
+let CHROME_PATH = '/Applications/Google\ Chrome\ Canary.app/Contents/MacOS/Google\ Chrome\ Canary' // PATH OF CHROME HEADLESS
 let chromeHelper = require("phantomimi") // phantomimi is a personal lib for scrapping with Chrome Headless (handle proxy management and others great features)
 
 const PAGE = 'https://web.bankin.com/challenge/index.html' //Structure of url to be scrapped.
@@ -214,7 +214,7 @@ const main = async ()=>{
         userAgent:"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_4) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/59.0.3071.115 Safari/537.36",
         debugRequest:true,
         port:(9222+i),
-        CHROME_PATH:'/Applications/Google\ Chrome\ Canary.app/Contents/MacOS/Google\ Chrome\ Canary',
+        CHROME_PATH:CHROME_PATH,
         viewPort:{width:1920,height:1080}
       }
       let myChrome // Variable for chrome instance
