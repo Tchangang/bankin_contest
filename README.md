@@ -5,6 +5,11 @@ Script by Tchangang Boris-Emmanuel [Linkedin](https://www.linkedin.com/in/boris-
 ## Install
 Clone the repo and run **npm install** in the folder.
 
+## Launch
+```javascript
+node index.js
+```
+
 ## Technology and used Libraries
 This code uses Chrome headless packaged in a special npm module called (Phantomimi (one of my package)).<br/>
 Chrome is driven with chrome remote interface protocol lib modified.<br/>
