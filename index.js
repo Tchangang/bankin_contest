@@ -1,5 +1,7 @@
 let transactions = [] // final transactions array
 let CHROME_PATH = '/Applications/Google\ Chrome\ Canary.app/Contents/MacOS/Google\ Chrome\ Canary' // PATH OF CHROME HEADLESS
+const PARALLEL_INSTANCE = 5
+
 let chromeHelper = require("phantomimi") // phantomimi is a personal lib for scrapping with Chrome Headless (handle proxy management and others great features)
 
 const PAGE = 'https://web.bankin.com/challenge/index.html' //Structure of url to be scrapped.
@@ -164,23 +166,6 @@ const getUrl = (index)=>{
   return PAGE+(index>0?'?start='+index:'')
 }
 
-/*
-  @appendToFile : Function to append data to file
-  // usefull only to have a nice file (one transaction on each line)
-*/
-const appendToFile = (filename,data)=>{
-  return new Promise((resolve, reject) => {
-    fs.appendFile('message.txt', 'data to append', 'utf8', (err)=>{
-      if(err){
-        // Don't want to reject here :hihi :-p
-        return false
-      }else{
-        return true
-      }
-    })
-  })
-}
-
 /*****************************************************************************************/
 // End of function declaration
 /*****************************************************************************************/
@@ -195,7 +180,6 @@ const main = async ()=>{
     // Number of chrome instance to launch. Please pay attention. Don't try on your local machine with a value > 10. 
     // This is usefull when using Phantomimi with aws lambda <3.
     const TOP_START = new Date().getTime()
-    const PARALLEL_INSTANCE = 5
     // Assumption about data length. You can change it and set to 300 by example, it will get all the data (up to 4999 in this case).
     const MAX_DATA = 5000
     const INTERVAL = Math.ceil(MAX_DATA/PARALLEL_INSTANCE)
@@ -300,11 +284,11 @@ const main = async ()=>{
 
 // Launch hostilities
 main()
-.then((result)=>{
+.then((transactionsFound)=>{
   // ********************************
   // RESULT OF SCRAPPING HERE
   // ********************************
-  console.log('Transactions array ',result)
+  console.log('Transactions array ',transactionsFound)
   // ********************************
 })
 .catch((e)=>{
