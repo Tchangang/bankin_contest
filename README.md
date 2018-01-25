@@ -44,5 +44,5 @@ Be fast as possible needs parallel scrapping. To set the number of chrome instan
 ## Important
 Please verify that the path of your local Chrome is the right path. Phantomimi needs CHROME_PATH to work. <br/>
 Launching various chrome instances could be difficult on your machine depending of it's configuration. Moreover there is a delay before the launch command and the chrome's startup.<br/>
-This script can be faster on AWS lambda by launching more instances at the same time (Ex : 10 chrome instances) without any lag as working with local Chrome instance.
+This script can be faster on AWS lambda by launching more instances at the same time (Ex : 10 chrome instances) without any lag as has beeen seen when working with local Chrome instance.
 
